@@ -3,23 +3,15 @@ require("@nomiclabs/hardhat-ethers");
 const fs = require('fs');
 // const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
 
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-  const accounts = await hre.ethers.getSigners();
-
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
-
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 1337
     },
-    goerli: {
-      url: "<YOUR_ALCHEMY_URL>",
-      accounts: [ "<YOUR_PRIVATE_KEY>" ]
+    polygon: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/yGIW-baUGghKnE1zvmQY77X4e1jqkzz3",
+      accounts: ['16cd20a057bc9f7896fe1123be4808e26e255058fee3cffc1f6a75430f3abd25']
     }
   },
   solidity: {
